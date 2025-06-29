@@ -1,0 +1,44 @@
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f0ec;
+  padding: 20px;
+  text-align: center;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ccc;
+}
+
+h1 {
+  color: #c96;
+}
+
+.pergunta {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+input {
+  margin-right: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #c96;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#resultado {
+  margin-top: 20px;
+  font-size: 1.2em;
+}

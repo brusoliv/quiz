@@ -53,6 +53,7 @@ const perguntas = [
 ];
 
 
+
 const quizContainer = document.getElementById('quiz-container');
 
 perguntas.forEach((pergunta, index) => {
@@ -71,18 +72,37 @@ perguntas.forEach((pergunta, index) => {
   quizContainer.appendChild(div);
 });
 
+
+let tempo = 0;
+const timerInterval = setInterval(() => {
+  tempo++;
+  document.getElementById('timer').textContent = `⏱ Tempo: ${tempo}s`;
+}, 1000);
+
 function verificarRespostas() {
+  clearInterval(timerInterval);
+
+  
   let acertos = 0;
+  const audioAcerto = new Audio('acerto.mp3');
+  const audioErro = new Audio('erro.mp3');
+
   const respostasCertas = [];
 
   perguntas.forEach((pergunta, index) => {
     const resposta = document.querySelector(`input[name="pergunta${index}"]:checked`);
     const correta = pergunta.correta;
 
+    
     if (resposta && parseInt(resposta.value) === correta) {
+      audioAcerto.play();
+
       acertos++;
       respostasCertas.push(`✅ ${pergunta.texto}`);
+    
     } else {
+      audioErro.play();
+
       const textoCorreto = pergunta.alternativas[correta];
       respostasCertas.push(`❌ ${pergunta.texto}<br><strong>Resposta certa:</strong> ${textoCorreto}`);
     }
@@ -91,5 +111,7 @@ function verificarRespostas() {
   document.getElementById('resultado').textContent = `Você acertou ${acertos} de ${perguntas.length} perguntas.`;
 
   const lista = respostasCertas.map(r => `<li>${r}</li>`).join("");
-  document.getElementById('respostas-certas').innerHTML = `<ul>${lista}</ul>`;
+  const respostaDiv = document.getElementById('respostas-certas');
+  respostaDiv.innerHTML = `<ul>${lista}</ul>`;
+  respostaDiv.scrollIntoView({ behavior: 'smooth' });
 }

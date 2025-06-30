@@ -1,57 +1,31 @@
+
 const perguntas = [
   {
     texto: "1. Qual o nome do movimento em que a bailarina gira sobre uma perna?",
-    alternativas: ["Plié", "Pirouette", "Souplesse", "Port de bras"],
+    alternativas: ["Plié", "Pirouette", "Arabesque", "Jeté"],
     correta: 1
   },
   {
-    texto: "2. O 'Battement tendu devant' é executado em qual direção?",
-    alternativas: ["Atrás", "Na frente", "Em diagonal", "Ao lado"],
+    texto: "2. Como se chama a roupa tradicional das bailarinas?",
+    alternativas: ["Collant", "Tutu", "Saia godê", "Macacão"],
     correta: 1
   },
   {
-    texto: "3. O que significa 'En dehors'?",
-    alternativas: ["Preparatória", "Para dentro", "Saltar", "Para fora"],
-    correta: 3
-  },
-  {
-    texto: "4. Qual dessas alternativas é um salto?",
-    alternativas: ["Relevé", "Cambré", "Assemblé", "Plié"],
+    texto: "3. O que significa a palavra 'ballet'?",
+    alternativas: ["Poesia", "Teatro", "Dança", "Música"],
     correta: 2
   },
   {
-    texto: "5. O que é 'Demi plié' ?",
-    alternativas: ["Um giro", "Flexão de costas", "Flexão de joelhos", "Esticar as pontas"],
-    correta: 2
-  },
-    {
-    texto: "6. O que é 'Sauté' ?",
-    alternativas: ["Uma posição de braços", "Esticar as pontas", "Um salto", "Caminhar na meia ponta"],
-    correta: 2
-  },
-      {
-    texto: "7. O que é 'Relevé' ?",
-    alternativas: ["Um salto", "Subir na meia ponta", "Uma reverência", "Um posição de braços"],
-    correta: 1
-  },
-        {
-    texto: "8. O que são 'Pantomimas' ?",
-      alternativas: ["Piruetas duplas", "1ª posição aberta", "Conjunto de bailarinas", "Mímicas"],
-    correta: 3
-  },
-          {
-    texto: "9. O movimento que desliza o pé pelo chão até a ponta dos dedos se chama: ",
-      alternativas: ["Battement tendu", "1ª posição fechada", "Pantomimas", "Galop"],
+    texto: "4. Como se chama o salto em que a bailarina pula com uma perna e aterrissa com a outra?",
+    alternativas: ["Jeté", "Passé", "Relevé", "Chassé"],
     correta: 0
   },
-            {
-    texto: "10. O movimento que lança a perna rápido e desce devagar se chama: ",
-      alternativas: ["Battement soutenu", "Grand Plié", "Grand battement", "Echappé"],
-    correta: 2
+  {
+    texto: "5. Qual desses é um estilo clássico de ballet?",
+    alternativas: ["Ballet Russo", "Ballet Funk", "Ballet Contemporâneo", "Ballet Jazz"],
+    correta: 0
   }
-  
 ];
-
 
 const quizContainer = document.getElementById('quiz-container');
 
@@ -71,18 +45,37 @@ perguntas.forEach((pergunta, index) => {
   quizContainer.appendChild(div);
 });
 
+
+let tempo = 0;
+const timerInterval = setInterval(() => {
+  tempo++;
+  document.getElementById('timer').textContent = `⏱ Tempo: ${tempo}s`;
+}, 1000);
+
 function verificarRespostas() {
+  clearInterval(timerInterval);
+
+  
   let acertos = 0;
+  const audioAcerto = new Audio('acerto.mp3');
+  const audioErro = new Audio('erro.mp3');
+
   const respostasCertas = [];
 
   perguntas.forEach((pergunta, index) => {
     const resposta = document.querySelector(`input[name="pergunta${index}"]:checked`);
     const correta = pergunta.correta;
 
+    
     if (resposta && parseInt(resposta.value) === correta) {
+      audioAcerto.play();
+
       acertos++;
       respostasCertas.push(`✅ ${pergunta.texto}`);
+    
     } else {
+      audioErro.play();
+
       const textoCorreto = pergunta.alternativas[correta];
       respostasCertas.push(`❌ ${pergunta.texto}<br><strong>Resposta certa:</strong> ${textoCorreto}`);
     }
@@ -91,5 +84,7 @@ function verificarRespostas() {
   document.getElementById('resultado').textContent = `Você acertou ${acertos} de ${perguntas.length} perguntas.`;
 
   const lista = respostasCertas.map(r => `<li>${r}</li>`).join("");
-  document.getElementById('respostas-certas').innerHTML = `<ul>${lista}</ul>`;
+  const respostaDiv = document.getElementById('respostas-certas');
+  respostaDiv.innerHTML = `<ul>${lista}</ul>`;
+  respostaDiv.scrollIntoView({ behavior: 'smooth' });
 }

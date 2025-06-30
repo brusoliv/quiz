@@ -1,27 +1,26 @@
 
 body {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: Arial, sans-serif;
   background-color: #f4f0ec;
-  padding: 8px;
+  padding: 20px;
   text-align: center;
-  font-size: large;
 }
 
 .container {
   max-width: 600px;
   margin: 0 auto;
   background: #fff;
-  padding: 40px;
+  padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px #ccc;
 }
 
 h1 {
-  color: rgb(241, 178, 115);
+  color: #c96;
 }
 
 .pergunta {
-  margin-bottom: 45px;
+  margin-bottom: 20px;
   text-align: left;
 }
 
@@ -30,10 +29,9 @@ input {
 }
 
 button {
-  padding: 20px 40px;
-  background-color: rgb(236, 164, 92);
+  padding: 10px 20px;
+  background-color: #c96;
   color: white;
-  font-size: medium;
   border: none;
   border-radius: 5px;
   cursor: pointer;

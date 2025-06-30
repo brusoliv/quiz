@@ -27,7 +27,7 @@ const perguntas = [
   },
     {
     texto: "6. O que é 'Sauté' ?",
-    alternativas: ["Um posição de braços", "Esticar as pontas", "Um salto", "Caminhar na meia ponta"],
+    alternativas: ["Uma posição de braços", "Esticar as pontas", "Um salto", "Caminhar na meia ponta"],
     correta: 3
   },
       {

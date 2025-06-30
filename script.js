@@ -1,31 +1,58 @@
-
 const perguntas = [
   {
     texto: "1. Qual o nome do movimento em que a bailarina gira sobre uma perna?",
-    alternativas: ["Plié", "Pirouette", "Arabesque", "Jeté"],
+    alternativas: ["Plié", "Pirouette", "Souplesse", "Port de bras"],
     correta: 1
   },
   {
-    texto: "2. Como se chama a roupa tradicional das bailarinas?",
-    alternativas: ["Collant", "Tutu", "Saia godê", "Macacão"],
+    texto: "2. O 'Battement tendu devant' é executado em qual direção?",
+    alternativas: ["Atrás", "Na frente", "Em diagonal", "Ao lado"],
     correta: 1
   },
   {
-    texto: "3. O que significa a palavra 'ballet'?",
-    alternativas: ["Poesia", "Teatro", "Dança", "Música"],
+    texto: "3. O que significa 'En dehors'?",
+    alternativas: ["Preparatória", "Para dentro", "Saltar", "Para fora"],
+    correta: 3
+  },
+  {
+    texto: "4. Qual dessas alternativas é um salto?",
+    alternativas: ["Relevé", "Cambré", "Assemblé", "Plié"],
     correta: 2
   },
   {
-    texto: "4. Como se chama o salto em que a bailarina pula com uma perna e aterrissa com a outra?",
-    alternativas: ["Jeté", "Passé", "Relevé", "Chassé"],
+    texto: "5. O que é 'Demi plié' ?",
+    alternativas: ["Um giro", "Flexão de costas", "Flexão de joelhos", "Esticar as pontas"],
+    correta: 2
+  },
+    {
+    texto: "6. O que é 'Sauté' ?",
+    alternativas: ["Uma posição de braços", "Esticar as pontas", "Um salto", "Caminhar na meia ponta"],
+    correta: 2
+  },
+      {
+    texto: "7. O que é 'Relevé' ?",
+    alternativas: ["Um salto", "Subir na meia ponta", "Uma reverência", "Um posição de braços"],
+    correta: 1
+  },
+        {
+    texto: "8. O que são 'Pantomimas' ?",
+      alternativas: ["Piruetas duplas", "1ª posição aberta", "Conjunto de bailarinas", "Mímicas"],
+    correta: 3
+  },
+          {
+    texto: "9. O movimento que desliza o pé pelo chão até a ponta dos dedos se chama: ",
+      alternativas: ["Battement tendu", "1ª posição fechada", "Pantomimas", "Galop"],
     correta: 0
   },
-  {
-    texto: "5. Qual desses é um estilo clássico de ballet?",
-    alternativas: ["Ballet Russo", "Ballet Funk", "Ballet Contemporâneo", "Ballet Jazz"],
-    correta: 0
+            {
+    texto: "10. O movimento que lança a perna rápido e desce devagar se chama: ",
+      alternativas: ["Battement soutenu", "Grand Plié", "Grand battement", "Echappé"],
+    correta: 2
   }
+  
 ];
+
+
 
 const quizContainer = document.getElementById('quiz-container');
 

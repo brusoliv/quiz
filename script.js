@@ -5,7 +5,7 @@ const perguntas = [
     correta: 1
   },
   {
-    texto: "2. O Battement tendu devant é executado em qual direção?",
+    texto: "2. O 'Battement tendu devant' é executado em qual direção?",
     alternativas: ["Atrás", "Na frente", "Em diagonal", "Ao lado"],
     correta: 1
   },
@@ -36,7 +36,7 @@ const perguntas = [
   },
         {
     texto: "8. O que são 'Pantomimas' ?",
-      alternativas: ["Piruetas duplas", "1ª posição aberta", "Bailarinas", "Mímicas"],
+      alternativas: ["Piruetas duplas", "1ª posição aberta", "Conjunto de bailarinas", "Mímicas"],
     correta: 3
   },
           {

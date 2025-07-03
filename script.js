@@ -40,12 +40,12 @@ const perguntas = [
     correta: 3
   },
           {
-    texto: "9. O movimento que desliza o pé pelo chão até a ponta dos dedos sem perder o contato com o chão se chama: ",
+    texto: "9. Qual desses movimentos o pé desliza até a ponta dos dedos sem perder o contato com o chão ?",
       alternativas: ["Battement tendu", "1ª posição fechada", "Pantomimas", "Galop"],
     correta: 0
   },
             {
-    texto: "10. O movimento que lança uma das pernas rápido e desce devagar com sustentação  é o: ",
+    texto: "10. Qual desses movimentos lança uma das pernas rápido e desce devagar com sustentação ?",
       alternativas: ["Battement soutenu", "Grand Plié", "Grand battement", "Echappé"],
     correta: 2
   }
